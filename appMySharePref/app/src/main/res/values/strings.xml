@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">appMySharePref</string>
+    <string name="usuario">Ingrese usuario</string>
+    <string name="registrar">Registrar</string>
+</resources>
