@@ -5,13 +5,13 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity
-class Contact (
+data class Contact (
     @PrimaryKey(autoGenerate = true)
-    val id: Int?,
+    var id: Int?,
 
     @ColumnInfo
-    val name: String,
+    var name: String,
 
     @ColumnInfo
-    val telephone: String
+    var telephone: String
         )
