@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">appAgendaRoom</string>
+    <string name="telf">Ingrese Telf</string>
+    <string name="nombre">Ingrese nombre</string>
+</resources>
