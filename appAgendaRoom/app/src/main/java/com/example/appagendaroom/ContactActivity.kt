@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_contact.*
 
 class ContactActivity : AppCompatActivity() {
@@ -14,6 +15,21 @@ class ContactActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_contact)
+
+        loadContact()
+    }
+
+    private fun loadContact() {
+        val gson = Gson()
+        val stringObj = intent.getStringExtra("contact")
+
+        contact = gson.fromJson(stringObj, Contact::class.java) ?: Contact(null, "", "")
+
+        if (contact.id != null)
+        {
+            etName.setText(contact.name)
+            etTelephone.setText(contact.telephone)
+        }
     }
 
     fun saveContact()
@@ -23,22 +39,13 @@ class ContactActivity : AppCompatActivity() {
 
         if (contact.id != null)
         {
-            AppDataBase.getInstance(this).getDao().updateContact()
+            AppDataBase.getInstance(this).getDao().updateContact(contact)
         }
         else
         {
             AppDataBase.getInstance(this).getDao().insertContact(contact)
         }
         finish()
-
-        //val name = etName.text.toString()
-        //val telephone = etTelephone.text.toString()
-
-
-
-        //contact = Contact(null, name, telephone)
-
-        //
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

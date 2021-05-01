@@ -10,8 +10,8 @@ data class Contact (
     var id: Int?,
 
     @ColumnInfo
-    var name: String,
+    var name: String?,
 
     @ColumnInfo
-    var telephone: String
+    var telephone: String?
         )
