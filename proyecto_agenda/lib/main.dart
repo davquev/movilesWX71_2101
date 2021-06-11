@@ -26,7 +26,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Future<String> makeRequest() async {
     var response = await http.get(Uri.parse(url),
-        headers: {'Accept': 'application/json'});
+        headers: {'Accept': 'aplication/json'});
 
     setState(() {
       var extractdata = json.decode(response.body);
