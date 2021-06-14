@@ -16,7 +16,7 @@ class DbHelper {
 
   Future<Database> openDb() async {
     if (db == null) {
-      db = await openDatabase(join(await getDatabasesPath(), 'shopping3.db'),
+      db = await openDatabase(join(await getDatabasesPath(), 'shopping.db'),
           onCreate: (database, version) {
         database.execute('CREATE TABLE lists('
             'id INTEGER PRIMARY KEY,'
