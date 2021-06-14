@@ -1,4 +1,0 @@
-#Thu Jun 10 07:23:40 COT 2021
-base.0=C\:\\Users\\Public\\dav_d\\UPC_2\\2021_1\\cc183-AplicacionesparaDispositivosMoviles\\lectures\\sem12\\Guia JM BD\\FlutterSqfliteLibraryDemo-master\\build\\app\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
-renamed.0=classes.dex
-path.0=classes.dex
