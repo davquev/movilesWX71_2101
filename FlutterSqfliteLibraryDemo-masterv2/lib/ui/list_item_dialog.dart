@@ -9,6 +9,7 @@ class ListItemDialog {
 
   Widget buildDialog(BuildContext context, ListItem item, bool isNew) {
     DbHelper helper = DbHelper();
+    //ojo helper.openDb();
 
     if (!isNew) {
       txtName.text = item.name;
@@ -19,7 +20,7 @@ class ListItemDialog {
       title: Text((isNew) ? 'New Item' : "Edit Item"),
       content: SingleChildScrollView(
         child: Column(
-          children: [
+          children: <Widget>[
             TextField(
               controller: txtName,
               decoration: InputDecoration(hintText: 'Item Name'),
@@ -32,7 +33,7 @@ class ListItemDialog {
               controller: txtNote,
               decoration: InputDecoration(hintText: 'Item Note'),
             ),
-            RaisedButton(
+            ElevatedButton(
               child: Text('Save Item'),
               onPressed: () {
                 item.name = txtName.text;

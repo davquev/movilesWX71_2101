@@ -16,7 +16,7 @@ class DbHelper {
 
   Future<Database> openDb() async {
     if (db == null) {
-      db = await openDatabase(join(await getDatabasesPath(), 'shopping.db'),
+      db = await openDatabase(join(await getDatabasesPath(), 'shopping_viernes.db'),
           onCreate: (database, version) {
         database.execute('CREATE TABLE lists('
             'id INTEGER PRIMARY KEY,'
@@ -98,5 +98,18 @@ class DbHelper {
         maps[i]['note'],
       );
     });
+  }
+
+  Future<int> deleteList(ShoppingList list) async{
+    int result = await db.delete('items', where: 'idList = ?', whereArgs: [list.id]);
+    result = await db.delete('lists', where: 'id = ?', whereArgs: [list.id]);
+
+    return result;
+  }
+
+  Future<int> deleteItem(ListItem items) async{
+    int result = await db.delete('items', where: 'id = ?', whereArgs: [items.id]);
+
+    return result;
   }
 }

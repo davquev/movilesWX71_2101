@@ -12,6 +12,9 @@ class ShoppingListDialog{
     if (!isNew){
       txtName.text = list.name;
       txtPriority.text = list.priority.toString();
+    }else{
+      txtName.text = "";
+      txtPriority.text = "";
     }
 
     return AlertDialog(
@@ -30,6 +33,7 @@ class ShoppingListDialog{
             ),
             TextField(
               controller: txtPriority,
+              keyboardType: TextInputType.number,
               decoration: InputDecoration(
                   hintText: 'Shopping List Priority (1-3)'
               ),

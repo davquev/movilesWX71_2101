@@ -46,7 +46,8 @@ class _ItemsScreenState extends State<ItemsScreen> {
                 setState(() {
                   items.removeAt(index);
                 });
-                Scaffold.of(context)
+                Scaffold
+                    .of(context)
                     .showSnackBar(SnackBar(content: Text("$strName deleted")));
               },
               child: ListTile(
