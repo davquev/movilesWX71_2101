@@ -3,6 +3,7 @@ class Movie {
   String overview;
   String posterPath;
   String title;
+  bool isFavorite;
 
   Movie({this.id, this.overview, this.posterPath, this.title});
 
@@ -11,6 +12,7 @@ class Movie {
     overview = json['overview'];
     posterPath = json['poster_path'];
     title = json['title'];
+    isFavorite = json['isFavorite'];
   }
 
   Map<String, dynamic> toJson() {
@@ -19,6 +21,7 @@ class Movie {
     data['overview'] = this.overview;
     data['poster_path'] = this.posterPath;
     data['title'] = this.title;
+    data['isFavorite'] = this.isFavorite;
     return data;
   }
 
